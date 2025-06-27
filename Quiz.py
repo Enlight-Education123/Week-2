@@ -2,25 +2,38 @@
 
 # TODO: Create 5 quiz questions with prompts and answers
 questions = [
-    {"prompt": "Question 1 goes here...\n", "answer": "answer1"},
+    {"prompt": "2+2\n", "answer": "4"},
+    {"prompt": "4+6\n", "answer": "10"},
+    {"prompt": "4*99\n", "answer": "396"},
+    {"prompt": "2*900\n", "answer": "1800"},
+    {"prompt": "56*54\n", "answer": "3024"}
+    ]
+    
+
     # Example format:
     # {"prompt": "What is 2 + 2?", "answer": "4"},
     # {"prompt": "Capital of France?", "answer": "Paris"}
-]
+
 
 # Initialize score
 score = 0
 
 # Loop through each question
 for q in questions:
-    # Ask the user the question
-    user_input = input(q["prompt"] + "Your answer: ").strip().lower()
+   
+        user_input = input(q["prompt"] + "Your answer: ").strip().lower()
 
-    # TODO: Handle blank input
-    
-    # TODO: Check if the user's answer is correct
-    
-    # TODO: Provide feedback (correct/incorrect) — optional
+# Handle blank input
+        if user_input == "":
+            print("Please enter an answer.")
+            continue
 
-# Show final score
+        if user_input == q["answer"]:
+            print("Correct!\n")
+            score += 1
+        else:
+            print("Incorrect!")        
+            
+    
+
 print(f"You got {score} out of {len(questions)} correct!") 
